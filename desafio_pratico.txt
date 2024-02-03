@@ -1,0 +1,65 @@
+let saldo = 1000;
+let operacao = 0;
+
+while (true) {
+  const menu = Number(prompt("Escolha uma opção:\n1-Ver Saldo\n2-Fazer Saque\n3-Fazer Depósito\n4=Sair"));
+  if (menu === 4) {
+    console.log('Até logo!');
+    break;
+  } else if (menu === 1) {
+    console.log(`Seu saldo no momento é: ${saldo.toFixed(2)}`);
+} else if (menu === 2) {
+    let operacao = Number(prompt("Digite o valor do saque: "));
+    if(operacao > 0 && operacao <= saldo) {
+        saldo -= operacao;
+        console.log('Operação de saque realizada con sucesso');
+        console.log(`Seu saldo no momento é: ${saldo.toFixed(2)}`);
+    } else if (operacao <= 0 ) {
+        console.log('O valor precisa ser maior que zero')
+    } else {
+        console.log('Você não tem saldo sulficiente!')
+    }
+} else if (menu === 3) {
+    let operacao = Number(prompt("Digite o valor do Deposito: "));
+    if (operacao > 0) {
+        saldo += operacao
+        console.log('Operação de depósito realizada con sucesso');
+        console.log(`Seu saldo no momento é: ${saldo.toFixed(2)}`);       
+    } else  {
+        console.log('O valor precisa ser maior que zero');
+    }
+
+} else {
+    console.log('Opção inválida!');
+}
+
+}
+
+
+
+
+
+
+while (true) {
+    const menu = Number(prompt("Escolha uma opção:\n1-Vamos jogar\n2-Sair"));
+    if (menu === 2) {
+      break;
+    } else if (menu === 1) {
+        
+      let numero_coringa = Math.floor(Math.random() * 100 ) + 1
+
+      do { 
+        let numero = Number(prompt("Adivinhe o número coringa: "));
+        if(numero_coringa === numero) {
+          console.log("Parabéns!!! Você acertou...")
+        } else if (numero_coringa < numero) {
+          console.log("O número digitado é maior que o número coringa")
+        } else  {
+          console.log("O número digitado é menor que o número coringa")
+        }
+      } while(numero_coringa === numero)
+
+    } else {
+      console.log("Opção inválida");
+    }
+  }
